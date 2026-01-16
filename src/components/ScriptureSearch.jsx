@@ -103,7 +103,7 @@ export default function ScriptureSearch() {
                                 classNames={bookSelectClassNames}
                                 variant="bordered"
                                 radius="full"
-                                selectedKeys={selectedBookIndex ? [selectedBookIndex] : []}
+                                selectedKeys={selectedBookIndex !== "" ? [selectedBookIndex] : []}
                                 onChange={handleBookChange}
                                 aria-label="Select Bible Book"
                                 className="min-w-[180px]"
