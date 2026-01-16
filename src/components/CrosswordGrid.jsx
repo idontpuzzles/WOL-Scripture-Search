@@ -161,9 +161,9 @@ export default function CrosswordGrid({ puzzle, userGrid, onCellChange, selected
 
     return (
         <div className="flex flex-col items-center w-full">
-            <div className="w-full overflow-x-auto p-8 flex justify-center">
+            <div className="w-full overflow-x-auto flex justify-center">
                 <div
-                    className="grid gap-0.5 bg-black/50 p-1 rounded-lg flex-shrink-0"
+                    className="grid gap-0.5 bg-black/50 p-1 rounded-lg flex-shrink-0 m-8"
                     style={{
                         gridTemplateColumns: `repeat(${cols}, auto)`,
                     }}
