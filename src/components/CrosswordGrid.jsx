@@ -160,77 +160,79 @@ export default function CrosswordGrid({ puzzle, userGrid, onCellChange, selected
     };
 
     return (
-        <div className="flex flex-col items-center">
-            <div
-                className="grid gap-0.5 bg-black/50 p-1 rounded-lg"
-                style={{
-                    gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-                }}
-            >
-                {puzzle.grid.map((row, rowIndex) =>
-                    row.map((cell, colIndex) => {
-                        const key = `${rowIndex}-${colIndex}`;
-                        const isSelected = selectedCell?.row === rowIndex && selectedCell?.col === colIndex;
-                        const isHighlighted = isInSelectedWord(rowIndex, colIndex);
-                        const userValue = userGrid?.[rowIndex]?.[colIndex] || '';
+        <div className="flex flex-col items-center w-full">
+            <div className="w-full overflow-x-auto p-8 flex justify-center">
+                <div
+                    className="grid gap-0.5 bg-black/50 p-1 rounded-lg flex-shrink-0"
+                    style={{
+                        gridTemplateColumns: `repeat(${cols}, auto)`,
+                    }}
+                >
+                    {puzzle.grid.map((row, rowIndex) =>
+                        row.map((cell, colIndex) => {
+                            const key = `${rowIndex}-${colIndex}`;
+                            const isSelected = selectedCell?.row === rowIndex && selectedCell?.col === colIndex;
+                            const isHighlighted = isInSelectedWord(rowIndex, colIndex);
+                            const userValue = userGrid?.[rowIndex]?.[colIndex] || '';
 
-                        // Check if letter is wrong (for showErrors mode)
-                        const isWrong = showErrors && userValue && cell && userValue.toUpperCase() !== cell.letter;
+                            // Check if letter is wrong (for showErrors mode)
+                            const isWrong = showErrors && userValue && cell && userValue.toUpperCase() !== cell.letter;
 
-                        if (!cell) {
-                            // Blocked cell
+                            if (!cell) {
+                                // Blocked cell
+                                return (
+                                    <div
+                                        key={key}
+                                        className="w-6 h-6 sm:w-8 sm:h-8 bg-black/80"
+                                    />
+                                );
+                            }
+
+                            // Determine background color
+                            let bgColor = 'bg-white/90';
+                            if (isSelected) {
+                                bgColor = 'bg-primary-500';
+                            } else if (isWrong) {
+                                bgColor = 'bg-red-400';
+                            } else if (isHighlighted) {
+                                bgColor = 'bg-primary-400/50';
+                            }
+
                             return (
                                 <div
                                     key={key}
-                                    className="w-6 h-6 sm:w-8 sm:h-8 bg-black/80"
-                                />
-                            );
-                        }
-
-                        // Determine background color
-                        let bgColor = 'bg-white/90';
-                        if (isSelected) {
-                            bgColor = 'bg-primary-500';
-                        } else if (isWrong) {
-                            bgColor = 'bg-red-400';
-                        } else if (isHighlighted) {
-                            bgColor = 'bg-primary-400/50';
-                        }
-
-                        return (
-                            <div
-                                key={key}
-                                onClick={() => handleCellClick(rowIndex, colIndex)}
-                                className={`
-                                    relative w-6 h-6 sm:w-8 sm:h-8 
-                                    flex items-center justify-center
-                                    cursor-pointer transition-colors
-                                    ${bgColor}
-                                `}
-                            >
-                                {cell.number && (
-                                    <span className="absolute top-0 left-0.5 text-[6px] sm:text-[8px] text-gray-600 font-medium leading-none">
-                                        {cell.number}
-                                    </span>
-                                )}
-                                <input
-                                    ref={el => inputRefs.current[key] = el}
-                                    type="text"
-                                    maxLength={1}
-                                    value={userValue}
-                                    onChange={() => { }} // Handled by onKeyDown
-                                    onKeyDown={(e) => handleKeyDown(e, rowIndex, colIndex)}
+                                    onClick={() => handleCellClick(rowIndex, colIndex)}
                                     className={`
-                                        w-full h-full text-center font-bold text-sm sm:text-lg uppercase
-                                        bg-transparent outline-none cursor-pointer p-0
-                                        ${isSelected ? 'text-white' : 'text-gray-900'}
+                                        relative w-6 h-6 sm:w-8 sm:h-8 
+                                        flex items-center justify-center
+                                        cursor-pointer transition-colors
+                                        ${bgColor}
                                     `}
-                                    aria-label={`Row ${rowIndex + 1}, Column ${colIndex + 1}`}
-                                />
-                            </div>
-                        );
-                    })
-                )}
+                                >
+                                    {cell.number && (
+                                        <span className="absolute top-0 left-0.5 text-[6px] sm:text-[8px] text-gray-600 font-medium leading-none">
+                                            {cell.number}
+                                        </span>
+                                    )}
+                                    <input
+                                        ref={el => inputRefs.current[key] = el}
+                                        type="text"
+                                        maxLength={1}
+                                        value={userValue}
+                                        onChange={() => { }} // Handled by onKeyDown
+                                        onKeyDown={(e) => handleKeyDown(e, rowIndex, colIndex)}
+                                        className={`
+                                            w-full h-full text-center font-bold text-sm sm:text-lg uppercase
+                                            bg-transparent outline-none cursor-pointer p-0
+                                            ${isSelected ? 'text-white' : 'text-gray-900'}
+                                        `}
+                                        aria-label={`Row ${rowIndex + 1}, Column ${colIndex + 1}`}
+                                    />
+                                </div>
+                            );
+                        })
+                    )}
+                </div>
             </div>
         </div>
     );
