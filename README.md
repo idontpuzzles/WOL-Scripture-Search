@@ -1,16 +1,32 @@
-# React + Vite
+# WOL Scripture Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive tool designed to help you search for scriptures, find media, and enjoy daily crossword puzzles from JW.org.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔍 Scripture Search
+Quickly find and read scriptures in multiple translations.
+- **Fast Search:** Instant results as you type.
+- **Clean Interface:** Focus purely on the text without distractions.
 
-## React Compiler
+### 🖼️ Image Search (Media Library)
+Browse and discover images and media related to biblical themes and publications.
+- **Visual library:** High-quality images sourced from publications.
+- **Easy viewing:** Click to view full-size images and details.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🧩 Crossword Puzzles
+Play official "Awake!" crossword puzzles directly in your browser.
+- **Interactive Grid:** Type directly into the puzzle grid with smart navigation.
+- **Multiple Puzzles:** Switch between different archived puzzles.
+- **Progress Tracking:** Your progress is saved automatically.
+- **Mobile Friendly:** Optimized layout with touch support and horizontal scrolling for phone screens.
+- **Helper Tools:** Options to reveal answers or check for errors if you get stuck.
 
-## Expanding the ESLint configuration
+## Usage
+Visit the live site at: **[WOL Scripture Search](https://idontpuzzles.github.io/WOL-Scripture-Search/)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Home:** Use the search bar to look up scriptures or browse images.
+2. **Crosswords:** Click the "Crosswords" link in the navigation bar to access the puzzle library. Select a puzzle card to start playing!
+
+---
+*This tool is a personal project and is not officially affiliated with Watchtower Bible and Tract Society of Pennsylvania.*
