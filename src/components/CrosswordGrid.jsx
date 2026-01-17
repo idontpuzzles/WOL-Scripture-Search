@@ -191,11 +191,11 @@ export default function CrosswordGrid({ puzzle, userGrid, onCellChange, selected
                             // Determine background color
                             let bgColor = 'bg-white/90';
                             if (isSelected) {
-                                bgColor = 'bg-primary-500';
+                                bgColor = 'bg-[#0288D1]';
                             } else if (isWrong) {
                                 bgColor = 'bg-red-400';
                             } else if (isHighlighted) {
-                                bgColor = 'bg-primary-400/50';
+                                bgColor = 'bg-[#81D4FA]';
                             }
 
                             return (

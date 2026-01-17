@@ -6,17 +6,17 @@ import CrosswordPage from './pages/CrosswordPage';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen w-full flex flex-col items-center justify-start py-12 px-4 text-foreground gap-4 relative overflow-hidden">
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <div className="min-h-screen w-full flex flex-col items-center justify-start py-12 px-4 gap-4 relative overflow-hidden">
 
-        <Navigation />
+        <div className="relative z-10 w-full max-w-7xl flex flex-col items-center gap-8">
+          <Navigation />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/crossword" element={<CrosswordPage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/crossword" element={<CrosswordPage />} />
+          </Routes>
+        </div>
 
         <motion.footer
           initial={{ opacity: 0 }}

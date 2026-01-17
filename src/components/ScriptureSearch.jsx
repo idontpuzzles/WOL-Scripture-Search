@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Select, SelectItem, Button, Card, CardBody, CardHeader } from "@heroui/react";
+import { Card, CardContent, Typography, TextField, MenuItem, Button, Box } from '@mui/material';
 import { bibleData } from '../data/books';
 import { motion } from 'framer-motion';
 
@@ -60,24 +60,6 @@ export default function ScriptureSearch() {
 
     const isSingleChapter = book?.chapters.length === 1;
 
-    // Glassmorphism Styles for Book (Full Width)
-    const bookSelectClassNames = {
-        trigger: "bg-white/10 border-white/20 data-[hover=true]:bg-white/20 backdrop-blur-md transition-all duration-300 text-center rounded-full",
-        value: "text-white font-medium text-center",
-        selectorIcon: "hidden",
-        popoverContent: "bg-[#14291c] border-white/10 dark rounded-xl",
-        base: "text-white"
-    };
-
-    // Glassmorphism Styles for Chapter/Verse (Smaller, Centered)
-    const smallSelectClassNames = {
-        trigger: "bg-white/10 border-white/20 data-[hover=true]:bg-white/20 backdrop-blur-md transition-all duration-300 text-center min-h-unit-10 rounded-full",
-        value: "text-white font-medium text-center",
-        selectorIcon: "hidden",
-        popoverContent: "bg-[#14291c] border-white/10 dark min-w-[120px] rounded-xl",
-        base: "text-white max-w-[140px]"
-    };
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -85,102 +67,150 @@ export default function ScriptureSearch() {
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.01 }}
         >
-            <Card className="w-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] overflow-visible">
-                <CardHeader className="flex gap-3 px-6 pt-6 pb-2">
-                    <div className="flex flex-col">
-                        <h2 className="text-2xl font-bold text-white">Scripture Search</h2>
-                        <p className="text-small text-primary-400/80">Search specific verses on WOL</p>
-                    </div>
-                </CardHeader>
-                <CardBody className="px-6 py-6 flex flex-col gap-6">
-                    {/* All Selectors in One Row */}
-                    <div className="flex justify-center items-end gap-4 flex-wrap">
+            <Card sx={{
+                minWidth: 300,
+                maxWidth: 600,
+                // Match "Pure Material" + "Glow/Border" aesthetic
+                boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                    borderColor: 'primary.main', // Orange border on hover
+                    boxShadow: '0 12px 48px 0 rgba(31, 38, 135, 0.5)'
+                }
+            }}>
+                <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 3, p: 4, alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                        <Typography variant="h5" component="h2" sx={{ fontWeight: 'bold', color: 'white', mb: 0.5 }}>
+                            WOL Scripture Search
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: 'primary.main', opacity: 0.8 }}>
+                            Search specific verses on WOL
+                        </Typography>
+                    </Box>
+
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2, alignItems: 'center', width: '100%' }}>
                         {/* Book */}
-                        <div className="flex flex-col items-center gap-1">
-                            <label className="text-primary-400 text-sm font-medium">Book</label>
-                            <Select
-                                placeholder="Select Book"
-                                classNames={bookSelectClassNames}
-                                variant="bordered"
-                                radius="full"
-                                selectedKeys={selectedBookIndex !== "" ? [selectedBookIndex] : []}
-                                onChange={handleBookChange}
-                                aria-label="Select Bible Book"
-                                className="min-w-[180px]"
-                            >
-                                {bibleData.map((b, i) => (
-                                    <SelectItem key={i} value={i} textValue={b.name} className="text-white data-[hover=true]:bg-white/10 data-[hover=true]:text-white text-center">
-                                        {b.name}
-                                    </SelectItem>
-                                ))}
-                            </Select>
-                        </div>
+                        <TextField
+                            select
+                            label="Book"
+                            value={selectedBookIndex}
+                            onChange={handleBookChange}
+                            variant="outlined"
+                            sx={{ width: 160 }}
+                            SelectProps={{
+                                MenuProps: {
+                                    PaperProps: {
+                                        style: {
+                                            maxHeight: 300,
+                                        },
+                                    },
+                                },
+                            }}
+                        >
+                            {bibleData.map((b, i) => (
+                                <MenuItem key={i} value={i}>
+                                    {b.name}
+                                </MenuItem>
+                            ))}
+                        </TextField>
 
                         {/* Chapter */}
-                        <div className="flex flex-col items-center gap-1">
-                            <label className="text-primary-200 text-sm font-medium">Chapter</label>
-                            {!isSingleChapter ? (
-                                <Select
-                                    placeholder="-"
-                                    isDisabled={!book}
-                                    classNames={smallSelectClassNames}
-                                    variant="bordered"
-                                    radius="full"
-                                    selectedKeys={selectedChapter ? [selectedChapter.toString()] : []}
-                                    onChange={(e) => {
-                                        setSelectedChapter(e.target.value);
-                                        setSelectedVerse("");
-                                    }}
-                                    aria-label="Select Chapter"
-                                    className="min-w-[100px]"
-                                >
-                                    {chapters.map((c) => (
-                                        <SelectItem key={c} value={c} textValue={c.toString()} className="text-white data-[hover=true]:bg-white/10 text-center">
-                                            {c.toString()}
-                                        </SelectItem>
-                                    ))}
-                                </Select>
-                            ) : (
-                                <div className="px-4 py-2 text-primary-200/50 text-sm flex items-center justify-center border border-dashed border-white/10 rounded-full bg-white/5 min-w-[100px]">
-                                    1
-                                </div>
-                            )}
-                        </div>
+                        {!isSingleChapter ? (
+                            <TextField
+                                select
+                                label="Chapter"
+                                value={selectedChapter}
+                                onChange={(e) => {
+                                    setSelectedChapter(e.target.value);
+                                    setSelectedVerse("");
+                                }}
+                                disabled={!book}
+                                variant="outlined"
+                                sx={{ width: 100 }}
+                                SelectProps={{
+                                    MenuProps: {
+                                        PaperProps: {
+                                            style: {
+                                                maxHeight: 300,
+                                                width: 100
+                                            },
+                                        },
+                                    },
+                                }}
+                            >
+                                {chapters.map((c) => (
+                                    <MenuItem key={c} value={c}>
+                                        {c}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+                        ) : (
+                            <Box sx={{
+                                width: 100,
+                                height: 56,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                border: '1px dashed rgba(255,255,255,0.3)',
+                                borderRadius: 1,
+                                bgcolor: 'rgba(255,255,255,0.05)',
+                                color: 'rgba(255,255,255,0.5)'
+                            }}>
+                                <Typography variant="caption" sx={{ textTransform: 'uppercase', fontSize: '0.65rem' }}>Chapter</Typography>
+                                <Typography variant="h6" sx={{ lineHeight: 1 }}>1</Typography>
+                            </Box>
+                        )}
 
                         {/* Verse */}
-                        <div className="flex flex-col items-center gap-1">
-                            <label className="text-primary-200 text-sm font-medium">Verse</label>
-                            <Select
-                                placeholder="-"
-                                isDisabled={!book || (!isSingleChapter && !selectedChapter)}
-                                classNames={smallSelectClassNames}
-                                variant="bordered"
-                                radius="full"
-                                selectedKeys={selectedVerse ? [selectedVerse.toString()] : []}
-                                onChange={(e) => setSelectedVerse(e.target.value)}
-                                aria-label="Select Verse"
-                                className="min-w-[100px]"
-                            >
-                                {verses.map((v) => (
-                                    <SelectItem key={v} value={v} textValue={v.toString()} className="text-white data-[hover=true]:bg-white/10 text-center">
-                                        {v.toString()}
-                                    </SelectItem>
-                                ))}
-                            </Select>
-                        </div>
-                    </div>
+                        <TextField
+                            select
+                            label="Verse"
+                            value={selectedVerse}
+                            onChange={(e) => setSelectedVerse(e.target.value)}
+                            disabled={!book || (!isSingleChapter && !selectedChapter)}
+                            variant="outlined"
+                            sx={{ width: 100 }}
+                            SelectProps={{
+                                MenuProps: {
+                                    PaperProps: {
+                                        style: {
+                                            maxHeight: 300,
+                                            width: 100
+                                        },
+                                    },
+                                },
+                            }}
+                        >
+                            {verses.map((v) => (
+                                <MenuItem key={v} value={v}>
+                                    {v}
+                                </MenuItem>
+                            ))}
+                        </TextField>
+                    </Box>
 
                     <Button
-                        size="lg"
-                        radius="full"
-                        isDisabled={!book || !selectedVerse}
-                        onPress={handleSearch}
-                        className="font-bold mt-2 px-8 py-3 text-lg bg-gradient-to-r from-primary-500 to-primary-700 hover:from-primary-400 hover:to-primary-600 text-black shadow-lg shadow-primary-500/30 transition-[transform,shadow] active:scale-95 self-center"
-                        variant="shadow"
+                        variant="contained"
+                        color="secondary"
+                        size="large"
+                        disabled={!book || !selectedVerse}
+                        onClick={handleSearch}
+                        sx={{
+                            px: 4,
+                            py: 1.5,
+                            mt: 1,
+                            borderRadius: 99,
+                            fontWeight: 'bold',
+                            fontSize: '1.1rem',
+                            textTransform: 'none',
+                            boxShadow: '0 4px 14px 0 rgba(55, 124, 251, 0.39)'
+                        }}
                     >
                         Search on WOL
                     </Button>
-                </CardBody>
+                </CardContent>
             </Card>
         </motion.div>
     );

@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardBody, CardHeader, Button } from "@heroui/react";
+import { Card, CardContent, Button, Typography, Box, Modal, IconButton } from '@mui/material';
 import CrosswordGrid from '../components/CrosswordGrid';
 import CluesPanel from '../components/CluesPanel';
-import { puzzles, getPuzzleById, getAllPuzzles } from '../data/puzzles';
+import { getPuzzleById, getAllPuzzles } from '../data/puzzles';
 import { getPuzzleProgress, savePuzzleProgress, clearPuzzleProgress } from '../utils/crosswordStorage';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function CrosswordPage() {
     const [selectedPuzzleId, setSelectedPuzzleId] = useState(null);
@@ -109,15 +110,15 @@ export default function CrosswordPage() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-center space-y-4 max-w-2xl z-10 mb-8"
+                style={{ textAlign: 'center', marginBottom: '2rem', maxWidth: '42rem', zIndex: 10 }}
             >
-                <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-sm tracking-tight">
+                <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold', color: 'white', textShadow: '0 2px 4px rgba(0,0,0,0.3)', letterSpacing: '-0.02em', fontSize: { xs: '2.5rem', md: '3.75rem' } }}>
                     Crossword Puzzles
-                </h1>
+                </Typography>
                 {!puzzle && (
-                    <p className="text-lg text-primary-200/80">
+                    <Typography variant="h6" sx={{ color: 'primary.light', opacity: 0.8, mt: 2 }}>
                         Select a puzzle to get started
-                    </p>
+                    </Typography>
                 )}
             </motion.header>
 
@@ -135,32 +136,43 @@ export default function CrosswordPage() {
                             return (
                                 <Card
                                     key={p.id}
-                                    isPressable
-                                    onPress={() => setSelectedPuzzleId(p.id)}
-                                    className="w-full aspect-square bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:bg-white/10 transition-all hover:scale-[1.02] hover:shadow-xl"
+                                    sx={{
+                                        aspectRatio: '1/1',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.2s ease-in-out',
+                                        '&:hover': {
+                                            transform: 'scale(1.02)',
+                                            boxShadow: 6
+                                        }
+                                    }}
+                                    onClick={() => setSelectedPuzzleId(p.id)}
                                 >
-                                    <CardBody className="px-6 py-4 flex flex-col justify-center items-center text-center gap-4 h-full">
-                                        <div className="flex-1 flex flex-col justify-center items-center gap-2">
-                                            <h3 className="text-2xl font-bold text-white">{p.title}</h3>
-                                            <p className="text-primary-300/80 text-sm">{p.description}</p>
-                                        </div>
+                                    <CardContent sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: 2, p: 3 }}>
+                                        <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
+                                            <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold', color: 'white' }}>
+                                                {p.title}
+                                            </Typography>
+                                            <Typography variant="body2" sx={{ color: 'primary.light', opacity: 0.8 }}>
+                                                {p.description}
+                                            </Typography>
+                                        </Box>
 
-                                        <div className="h-8 flex items-center">
+                                        <Box sx={{ height: 32, display: 'flex', alignItems: 'center' }}>
                                             {progress?.completed ? (
-                                                <span className="text-green-400 font-medium text-xs bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">
+                                                <Box sx={{ color: '#4ade80', fontSize: '0.75rem', fontWeight: 500, bgcolor: 'rgba(74, 222, 128, 0.1)', px: 1.5, py: 0.5, borderRadius: 99, border: '1px solid rgba(74, 222, 128, 0.2)' }}>
                                                     ✓ Completed
-                                                </span>
+                                                </Box>
                                             ) : progress ? (
-                                                <span className="text-yellow-400 font-medium text-xs bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">
+                                                <Box sx={{ color: '#facc15', fontSize: '0.75rem', fontWeight: 500, bgcolor: 'rgba(250, 204, 21, 0.1)', px: 1.5, py: 0.5, borderRadius: 99, border: '1px solid rgba(250, 204, 21, 0.2)' }}>
                                                     In Progress
-                                                </span>
+                                                </Box>
                                             ) : (
-                                                <span className="text-white/30 font-medium text-xs">
+                                                <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.3)', fontWeight: 500 }}>
                                                     Start Puzzle
-                                                </span>
+                                                </Typography>
                                             )}
-                                        </div>
-                                    </CardBody>
+                                        </Box>
+                                    </CardContent>
                                 </Card>
                             );
                         })}
@@ -174,77 +186,88 @@ export default function CrosswordPage() {
                         className="flex flex-col gap-6"
                     >
                         {/* Puzzle Header */}
-                        <div className="flex justify-between items-center flex-wrap gap-2">
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
                             <Button
-                                size="sm"
-                                variant="light"
-                                onPress={handleBackToList}
-                                className="text-primary-200 hover:text-white"
+                                startIcon={<ArrowBackIcon />}
+                                onClick={handleBackToList}
+                                sx={{ color: 'primary.light', '&:hover': { color: 'white' } }}
                             >
-                                ← Back to Puzzles
+                                Back to Puzzles
                             </Button>
-                            <h2 className="text-2xl font-bold text-white">{puzzle.title}</h2>
-                            <div className="flex gap-2">
+                            <Typography variant="h4" component="h2" sx={{ fontWeight: 'bold', color: 'white' }}>
+                                {puzzle.title}
+                            </Typography>
+                            <Box sx={{ display: 'flex', gap: 1 }}>
                                 <Button
-                                    size="sm"
-                                    variant="bordered"
-                                    onPress={handleReset}
-                                    className="border-white/20 text-primary-200 hover:text-white"
+                                    variant="outlined"
+                                    size="small"
+                                    onClick={handleReset}
+                                    sx={{
+                                        color: 'primary.light',
+                                        borderColor: 'rgba(255,255,255,0.2)',
+                                        '&:hover': { color: 'white', borderColor: 'white' }
+                                    }}
                                 >
                                     Reset
                                 </Button>
-                            </div>
-                        </div>
+                            </Box>
+                        </Box>
 
                         {/* Controls Row */}
-                        <div className="flex flex-wrap gap-4 items-center justify-center">
-                            <button
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center', justifyContent: 'center' }}>
+                            <Button
                                 onClick={() => setShowErrors(!showErrors)}
-                                className={`
-                                    px-4 py-2 rounded-full text-sm font-medium
-                                    transition-all duration-300 ease-out
-                                    flex items-center gap-2
-                                    ${showErrors
-                                        ? 'bg-red-500 text-white shadow-lg shadow-red-500/40 scale-105'
-                                        : 'bg-white/10 text-primary-200 hover:bg-white/20 border border-white/20'
+                                variant={showErrors ? "contained" : "outlined"}
+                                color="error"
+                                sx={{
+                                    borderRadius: 99,
+                                    textTransform: 'none',
+                                    fontWeight: 500,
+                                    bgcolor: showErrors ? 'error.main' : 'rgba(255,255,255,0.05)',
+                                    borderColor: showErrors ? 'error.main' : 'rgba(255,255,255,0.2)',
+                                    color: showErrors ? 'white' : 'error.light',
+                                    '&:hover': {
+                                        bgcolor: showErrors ? 'error.dark' : 'rgba(255,255,255,0.1)',
                                     }
-                                `}
+                                }}
                             >
-                                <span className={`w-3 h-3 rounded-full transition-colors ${showErrors ? 'bg-white' : 'bg-red-400'}`}></span>
                                 {showErrors ? 'Errors Visible' : 'Show Errors'}
-                            </button>
-                            <button
+                            </Button>
+                            <Button
                                 onClick={handleRevealClick}
                                 disabled={revealed}
-                                className={`
-                                    px-4 py-2 rounded-full text-sm font-medium
-                                    transition-all duration-300 ease-out
-                                    ${revealed
-                                        ? 'bg-warning-500/50 text-warning-200 cursor-not-allowed opacity-60'
-                                        : 'bg-gradient-to-r from-warning-500 to-warning-600 text-black shadow-lg shadow-warning-500/30 hover:from-warning-400 hover:to-warning-500'
-                                    }
-                                `}
+                                variant="contained"
+                                color="warning"
+                                sx={{
+                                    borderRadius: 99,
+                                    textTransform: 'none',
+                                    fontWeight: 500,
+                                    boxShadow: revealed ? 'none' : '0 4px 14px 0 rgba(255, 193, 7, 0.3)',
+                                    opacity: revealed ? 0.6 : 1
+                                }}
                             >
                                 {revealed ? 'Answers Revealed' : 'Reveal Answers'}
-                            </button>
-                        </div>
+                            </Button>
+                        </Box>
 
                         {/* Completion Message */}
                         {isComplete && !revealed && (
-                            <Card className="bg-green-500/20 border border-green-400/30">
-                                <CardBody className="py-3 text-center">
-                                    <span className="text-green-300 font-bold text-lg">
+                            <Card sx={{ bgcolor: 'rgba(74, 222, 128, 0.1)', border: '1px solid #4ade80' }}>
+                                <CardContent sx={{ py: 2, textAlign: 'center', '&:last-child': { pb: 2 } }}>
+                                    <Typography variant="h6" sx={{ color: '#4ade80', fontWeight: 'bold' }}>
                                         🎉 Congratulations! Puzzle Complete!
-                                    </span>
-                                </CardBody>
+                                    </Typography>
+                                </CardContent>
                             </Card>
                         )}
 
                         {/* Grid and Clues */}
-                        <Card className="w-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]">
-                            <CardBody className="px-6 py-6 flex flex-col gap-8 items-center">
+                        <Card sx={{
+                            width: '100%',
+                        }}>
+                            <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'center' }}>
                                 {/* Grid */}
-                                <div className="flex-shrink-0 w-full flex justify-center">
+                                <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                     <CrosswordGrid
                                         puzzle={puzzle}
                                         userGrid={userGrid}
@@ -254,56 +277,71 @@ export default function CrosswordPage() {
                                         showErrors={showErrors}
                                         revealed={revealed}
                                     />
-                                </div>
+                                </Box>
 
                                 {/* Clues */}
-                                <div className="flex-grow w-full">
+                                <Box sx={{ width: '100%', flexGrow: 1 }}>
                                     <CluesPanel
                                         clues={puzzle.clues}
                                         selectedClue={selectedClue}
                                         onSelectClue={setSelectedClue}
                                         showAnswers={revealed}
                                     />
-                                </div>
-                            </CardBody>
+                                </Box>
+                            </CardContent>
                         </Card>
                     </motion.div>
                 )}
             </main>
 
             {/* Confirm Reveal Modal */}
-            {showConfirmModal && (
-                <div className="fixed inset-0 z-[9999] flex items-center justify-center">
-                    <div
-                        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-                        onClick={() => setShowConfirmModal(false)}
-                    />
-                    <div className="relative bg-zinc-900 border border-white/20 rounded-xl shadow-2xl max-w-md w-full mx-4 overflow-hidden">
-                        <div className="px-6 py-4 border-b border-white/10">
-                            <h3 className="text-xl font-bold text-white">Reveal Answers?</h3>
-                        </div>
-                        <div className="px-6 py-4">
-                            <p className="text-primary-200">
-                                Are you sure you want to reveal all answers?
-                            </p>
-                        </div>
-                        <div className="px-6 py-4 border-t border-white/10 flex justify-end gap-3">
-                            <button
-                                onClick={() => setShowConfirmModal(false)}
-                                className="px-4 py-2 rounded-lg text-primary-200 hover:bg-white/10 transition-colors"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                onClick={confirmReveal}
-                                className="px-4 py-2 rounded-lg bg-amber-500 text-black font-medium hover:bg-amber-400 transition-colors"
-                            >
-                                Yes, Reveal
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+            <Modal
+                open={showConfirmModal}
+                onClose={() => setShowConfirmModal(false)}
+                aria-labelledby="reveal-modal-title"
+                aria-describedby="reveal-modal-description"
+                sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
+                <Box sx={{
+                    position: 'relative',
+                    bgcolor: '#18181b',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    borderRadius: 3,
+                    boxShadow: 24,
+                    width: '100%',
+                    maxWidth: 400,
+                    mx: 2,
+                    overflow: 'hidden',
+                    outline: 'none'
+                }}>
+                    <Box sx={{ px: 3, py: 2, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                        <Typography id="reveal-modal-title" variant="h6" component="h2" sx={{ color: 'white', fontWeight: 'bold' }}>
+                            Reveal Answers?
+                        </Typography>
+                    </Box>
+                    <Box sx={{ px: 3, py: 3 }}>
+                        <Typography id="reveal-modal-description" sx={{ color: 'primary.light' }}>
+                            Are you sure you want to reveal all answers?
+                        </Typography>
+                    </Box>
+                    <Box sx={{ px: 3, py: 2, borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
+                        <Button
+                            onClick={() => setShowConfirmModal(false)}
+                            sx={{ color: 'primary.light', '&:hover': { bgcolor: 'rgba(255,255,255,0.05)' } }}
+                        >
+                            Cancel
+                        </Button>
+                        <Button
+                            onClick={confirmReveal}
+                            variant="contained"
+                            color="warning"
+                            sx={{ color: 'black', fontWeight: 'bold' }}
+                        >
+                            Yes, Reveal
+                        </Button>
+                    </Box>
+                </Box>
+            </Modal>
         </>
     );
 }

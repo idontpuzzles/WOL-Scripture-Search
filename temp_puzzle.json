@@ -1,0 +1,1377 @@
+FIRSTRIPEFRUITS, 0.21500000000000002
+AIM, 0.7149999999999999
+AGE, 0.6649999999999999
+RAM, 0.7083333333333333
+RARE, 0.5411111111111111
+IDLE, 0.5911111111111111
+WINE, 0.5411111111111111
+ECHO, 0.5844444444444444
+EXILE, 0.4705555555555555
+YIRON, 0.5172222222222221
+IBHAR, 0.4705555555555555
+SYRIA, 0.5172222222222221
+AVVIM, 0.46722222222222215
+SHINAB, 0.7
+GRAVE, 0.46388888888888885
+FELIX, 0.5072222222222221
+RAISE, 0.4605555555555555
+GALEED, 0.4599999999999999
+GOG, 0.6316666666666666
+ALMUG, 0.4972222222222221
+UNCLEAN, 0.37611111111111106
+NECHO, 0.5005555555555555
+REFINE, 0.39999999999999997
+PEOPLES, 0.6194444444444444
+TONGUE, 0.39999999999999997
+EARTHLY, 0.4194444444444444
+REVENGE, 0.36277777777777775
+AMARIAH, 0.4094444444444444
+MARKING, 0.3727777777777777
+SHEDDINGOFBLOOD, 0.315
+SIXTEENYEARSOLD, 0.26499999999999996
+FLYINGCREATURES, 0.3116666666666667
+{
+    "id": "custom-1768617994176",
+    "title": "g05 8/8",
+    "description": "Awake! Puzzle",
+    "grid": [
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "P",
+                "number": 1
+            },
+            null,
+            null,
+            {
+                "letter": "U",
+                "number": 2
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "R",
+                "number": 3
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "F"
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "N"
+            },
+            {
+                "letter": "E"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "O"
+            },
+            null,
+            null,
+            {
+                "letter": "C"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "F",
+                "number": 4
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "P"
+            },
+            null,
+            null,
+            {
+                "letter": "L"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "L"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "L"
+            },
+            null,
+            {
+                "letter": "N",
+                "number": 5
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "C"
+            },
+            {
+                "letter": "H"
+            },
+            {
+                "letter": "O"
+            },
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "Y"
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "T",
+                "number": 6
+            },
+            {
+                "letter": "O"
+            },
+            {
+                "letter": "N"
+            },
+            {
+                "letter": "G"
+            },
+            {
+                "letter": "U"
+            },
+            {
+                "letter": "E"
+            },
+            null,
+            null,
+            {
+                "letter": "A"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "I"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "S",
+                "number": 7
+            },
+            {
+                "letter": "H"
+            },
+            {
+                "letter": "I",
+                "number": 8
+            },
+            {
+                "letter": "N"
+            },
+            {
+                "letter": "A",
+                "number": 9
+            },
+            {
+                "letter": "B"
+            },
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "N"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "B"
+            },
+            null,
+            {
+                "letter": "V"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "G"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "H"
+            },
+            null,
+            {
+                "letter": "V"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "C"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "S",
+                "number": 10
+            },
+            {
+                "letter": "Y"
+            },
+            {
+                "letter": "R"
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "A"
+            },
+            null,
+            {
+                "letter": "I"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "R"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "R",
+                "number": 11
+            },
+            {
+                "letter": "A",
+                "number": 12
+            },
+            {
+                "letter": "M"
+            },
+            null,
+            {
+                "letter": "F",
+                "number": 13
+            },
+            {
+                "letter": "E",
+                "number": 14
+            },
+            {
+                "letter": "L"
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "X"
+            }
+        ],
+        [
+            {
+                "letter": "R",
+                "number": 15
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "V"
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "N"
+            },
+            {
+                "letter": "G"
+            },
+            {
+                "letter": "E",
+                "number": 16
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "G",
+                "number": 17
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "A",
+                "number": 18
+            },
+            null,
+            {
+                "letter": "G"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "X"
+            },
+            null,
+            null,
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "A"
+            },
+            null,
+            null,
+            {
+                "letter": "A"
+            },
+            null,
+            {
+                "letter": "F",
+                "number": 19
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "R"
+            },
+            {
+                "letter": "S"
+            },
+            {
+                "letter": "T"
+            },
+            {
+                "letter": "R"
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "P"
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "F"
+            },
+            {
+                "letter": "R",
+                "number": 20
+            },
+            {
+                "letter": "U"
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "T"
+            },
+            {
+                "letter": "S",
+                "number": 21
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "T"
+            },
+            null,
+            null,
+            {
+                "letter": "R"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "A"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "M"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "A"
+            },
+            null,
+            {
+                "letter": "L"
+            },
+            null,
+            {
+                "letter": "H"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "U"
+            },
+            null,
+            null,
+            {
+                "letter": "T"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "V"
+            },
+            null,
+            {
+                "letter": "R",
+                "number": 22
+            },
+            null,
+            null,
+            {
+                "letter": "W",
+                "number": 23
+            },
+            null,
+            null,
+            {
+                "letter": "R"
+            },
+            null,
+            {
+                "letter": "E"
+            },
+            null,
+            {
+                "letter": "E"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "R"
+            },
+            null,
+            null,
+            {
+                "letter": "H"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "E"
+            },
+            null,
+            {
+                "letter": "A"
+            },
+            null,
+            null,
+            {
+                "letter": "I",
+                "number": 24
+            },
+            {
+                "letter": "D"
+            },
+            {
+                "letter": "L"
+            },
+            {
+                "letter": "E"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "D"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "E"
+            },
+            null,
+            {
+                "letter": "A",
+                "number": 25
+            },
+            {
+                "letter": "L"
+            },
+            {
+                "letter": "M"
+            },
+            {
+                "letter": "U"
+            },
+            {
+                "letter": "G",
+                "number": 26
+            },
+            null,
+            {
+                "letter": "Y",
+                "number": 27
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "R"
+            },
+            {
+                "letter": "O"
+            },
+            {
+                "letter": "N"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "D"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            {
+                "letter": "S"
+            },
+            null,
+            null,
+            {
+                "letter": "Y"
+            },
+            null,
+            null,
+            {
+                "letter": "O"
+            },
+            null,
+            null,
+            {
+                "letter": "S"
+            },
+            null,
+            null,
+            {
+                "letter": "E",
+                "number": 28
+            },
+            {
+                "letter": "C"
+            },
+            {
+                "letter": "H"
+            },
+            {
+                "letter": "O"
+            },
+            null,
+            null,
+            null,
+            {
+                "letter": "I"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "G",
+                "number": 29
+            },
+            {
+                "letter": "A",
+                "number": 30
+            },
+            {
+                "letter": "L"
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "D"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "N"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "M"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "G"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "M",
+                "number": 31
+            },
+            {
+                "letter": "A"
+            },
+            {
+                "letter": "R"
+            },
+            {
+                "letter": "K"
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "N"
+            },
+            {
+                "letter": "G"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "O"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "R"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "F"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "I"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "B"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "A"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "L"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "H"
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "O"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "O"
+            },
+            null
+        ],
+        [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+                "letter": "S",
+                "number": 32
+            },
+            {
+                "letter": "I"
+            },
+            {
+                "letter": "X"
+            },
+            {
+                "letter": "T"
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "N"
+            },
+            {
+                "letter": "Y"
+            },
+            {
+                "letter": "E"
+            },
+            {
+                "letter": "A"
+            },
+            {
+                "letter": "R"
+            },
+            {
+                "letter": "S"
+            },
+            {
+                "letter": "O"
+            },
+            {
+                "letter": "L"
+            },
+            {
+                "letter": "D"
+            },
+            null
+        ]
+    ],
+    "clues": {
+        "across": [
+            {
+                "number": 3,
+                "clue": "To separate and purify metals (Job 28:1)",
+                "answer": "REFINE",
+                "row": 1,
+                "col": 12,
+                "length": 6
+            },
+            {
+                "number": 5,
+                "clue": "Nebuchadnezzar defeated this Egyptian Pharaoh at Carchemish during the reign of King Jehoiakim of Judah (Jeremiah 46:2)",
+                "answer": "NECHO",
+                "row": 4,
+                "col": 15,
+                "length": 5
+            },
+            {
+                "number": 6,
+                "clue": "Control of this body member plays a large role in gaining Jehovah’s favor (1 Peter 3:10-12)",
+                "answer": "TONGUE",
+                "row": 5,
+                "col": 8,
+                "length": 6
+            },
+            {
+                "number": 7,
+                "clue": "This king of Admah was one of the five monarchs who unsuccessfully rebelled against King Chedorlaomer (Genesis 14:2-5)",
+                "answer": "SHINAB",
+                "row": 6,
+                "col": 13,
+                "length": 6
+            },
+            {
+                "number": 10,
+                "clue": "Jehovah commissioned Elijah to anoint Hazael as king of this nation (1 Kings 19:15)",
+                "answer": "SYRIA",
+                "row": 9,
+                "col": 11,
+                "length": 5
+            },
+            {
+                "number": 11,
+                "clue": "This animal served as an installation offering for the Aaronic priesthood (Leviticus 8:22-28)",
+                "answer": "RAM",
+                "row": 10,
+                "col": 15,
+                "length": 3
+            },
+            {
+                "number": 13,
+                "clue": "Hoping to get a bribe from Paul, he held the apostle prisoner for two years in Caesarea (Acts 24:26, 27)",
+                "answer": "FELIX",
+                "row": 10,
+                "col": 19,
+                "length": 5
+            },
+            {
+                "number": 15,
+                "clue": "Retaliation in kind or degree (Jeremiah 20:10)",
+                "answer": "REVENGE",
+                "row": 11,
+                "col": 0,
+                "length": 7
+            },
+            {
+                "number": 19,
+                "clue": "Although the quantity was not specified, Jehovah required that the nation of Israel offer the best of these to him [3 words] (Exodus 23:19)",
+                "answer": "FIRSTRIPEFRUITS",
+                "row": 12,
+                "col": 8,
+                "length": 15
+            },
+            {
+                "number": 24,
+                "clue": "Useless, lacking worth (1 Timothy 1:6)",
+                "answer": "IDLE",
+                "row": 15,
+                "col": 15,
+                "length": 4
+            },
+            {
+                "number": 25,
+                "clue": "A tree that Solomon requested of King Hiram for use in construction of the temple and for making harps and stringed instruments (1 Kings 10:11, 12, King James Version)",
+                "answer": "ALMUG",
+                "row": 16,
+                "col": 5,
+                "length": 5
+            },
+            {
+                "number": 27,
+                "clue": "One of the fortified cities in the territory of Naphtali (Joshua 19:38)",
+                "answer": "YIRON",
+                "row": 16,
+                "col": 11,
+                "length": 5
+            },
+            {
+                "number": 28,
+                "clue": "To repeat or imitate",
+                "answer": "ECHO",
+                "row": 17,
+                "col": 15,
+                "length": 4
+            },
+            {
+                "number": 29,
+                "clue": "The name Jacob gave to the place where he and Laban concluded a covenant of peace (Genesis 31:43-53)",
+                "answer": "GALEED",
+                "row": 18,
+                "col": 9,
+                "length": 6
+            },
+            {
+                "number": 31,
+                "clue": "Indelible coloring of the skin by tattoos (Leviticus 19:28)",
+                "answer": "MARKING",
+                "row": 20,
+                "col": 9,
+                "length": 7
+            },
+            {
+                "number": 32,
+                "clue": "It was at this age that Uzziah began to reign over Judah in place of his father Amaziah [3 words] (2 Chronicles 26:1-3)",
+                "answer": "SIXTEENYEARSOLD",
+                "row": 26,
+                "col": 8,
+                "length": 15
+            }
+        ],
+        "down": [
+            {
+                "number": 1,
+                "clue": "Bodies of persons distinguished by something they hold in common (Revelation 7:9)",
+                "answer": "PEOPLES",
+                "row": 0,
+                "col": 13,
+                "length": 7
+            },
+            {
+                "number": 2,
+                "clue": "What lepers in Israel were required to call out, so as to warn others to stay away and not become contaminated (Leviticus 13:45)",
+                "answer": "UNCLEAN",
+                "row": 0,
+                "col": 16,
+                "length": 7
+            },
+            {
+                "number": 4,
+                "clue": "Alternate expression used in the Bible to indicate birds [2 words] (Genesis 1:26)",
+                "answer": "FLYINGCREATURES",
+                "row": 3,
+                "col": 3,
+                "length": 15
+            },
+            {
+                "number": 8,
+                "clue": "One of David’s sons who was born in Jerusalem (2 Samuel 5:15)",
+                "answer": "IBHAR",
+                "row": 6,
+                "col": 15,
+                "length": 5
+            },
+            {
+                "number": 9,
+                "clue": "Early settlers in a western part of Canaan (Deuteronomy 2:23)",
+                "answer": "AVVIM",
+                "row": 6,
+                "col": 17,
+                "length": 5
+            },
+            {
+                "number": 12,
+                "clue": "Maturity (John 9:21)",
+                "answer": "AGE",
+                "row": 10,
+                "col": 16,
+                "length": 3
+            },
+            {
+                "number": 14,
+                "clue": "Because of unfaithfulness to the covenant that they had made with Jehovah, the Israelites were led into this (Jeremiah 20:4)",
+                "answer": "EXILE",
+                "row": 10,
+                "col": 20,
+                "length": 5
+            },
+            {
+                "number": 16,
+                "clue": "James said that jealousy, contentiousness, and lying against the truth is this and not the wisdom from above (James 3:15)",
+                "answer": "EARTHLY",
+                "row": 11,
+                "col": 6,
+                "length": 7
+            },
+            {
+                "number": 17,
+                "clue": "Jacob stationed a pillar over Rachel’s (Genesis 35:20)",
+                "answer": "GRAVE",
+                "row": 11,
+                "col": 10,
+                "length": 5
+            },
+            {
+                "number": 18,
+                "clue": "Paul advised Timothy to train himself with godly devotion as this (1 Timothy 4:7)",
+                "answer": "AIM",
+                "row": 11,
+                "col": 14,
+                "length": 3
+            },
+            {
+                "number": 20,
+                "clue": "Infrequent (Proverbs 25:17)",
+                "answer": "RARE",
+                "row": 12,
+                "col": 18,
+                "length": 4
+            },
+            {
+                "number": 21,
+                "clue": "Because of Abigail’s sensibleness, David avoided this rash act [3 words] (1 Samuel 25:31)",
+                "answer": "SHEDDINGOFBLOOD",
+                "row": 12,
+                "col": 22,
+                "length": 15
+            },
+            {
+                "number": 22,
+                "clue": "Resurrect (Hebrews 11:19)",
+                "answer": "RAISE",
+                "row": 14,
+                "col": 12,
+                "length": 5
+            },
+            {
+                "number": 23,
+                "clue": "What Jesus made in his first miracle (John 2:7-11)",
+                "answer": "WINE",
+                "row": 14,
+                "col": 15,
+                "length": 4
+            },
+            {
+                "number": 26,
+                "clue": "He is drawn into attacking God’s people because they enjoy prosperity and seem unprotected (Ezekiel 38:10-12, 14-16)",
+                "answer": "GOG",
+                "row": 16,
+                "col": 9,
+                "length": 3
+            },
+            {
+                "number": 30,
+                "clue": "He was the chief priest “for every matter of Jehovah” during Jehoshaphat’s reign (2 Chronicles 19:11)",
+                "answer": "AMARIAH",
+                "row": 18,
+                "col": 10,
+                "length": 7
+            }
+        ]
+    }
+}

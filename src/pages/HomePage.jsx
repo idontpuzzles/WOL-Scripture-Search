@@ -12,7 +12,7 @@ export default function HomePage() {
                 className="text-center space-y-4 max-w-2xl z-10 mb-8"
             >
                 <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-sm tracking-tight">
-                    WOL Scripture Search
+                    Search Tools
                 </h1>
             </motion.header>
 

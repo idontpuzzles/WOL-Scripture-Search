@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Card, CardBody, CardHeader, Input, Button } from "@heroui/react";
+import { Card, CardContent, Typography, TextField, Button, Box } from '@mui/material';
+import { motion } from 'framer-motion';
 
 export default function ImageSearch() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -12,35 +13,72 @@ export default function ImageSearch() {
     };
 
     return (
-        <Card className="w-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] overflow-visible transition-colors hover:border-white/20">
-            <CardHeader className="flex flex-col items-start px-6 pt-6 pb-2">
-                <h2 className="text-2xl font-bold text-white">Image Search</h2>
-                <p className="text-small text-primary-300/80">Search for images on JW.org</p>
-            </CardHeader>
-            <CardBody className="px-6 py-6 flex flex-col gap-4">
-                <Input
-                    placeholder="Enter search keyword..."
-                    variant="bordered"
-                    radius="full"
-                    value={searchTerm}
-                    onValueChange={setSearchTerm}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                    classNames={{
-                        inputWrapper: "bg-white/10 border-white/20 data-[hover=true]:bg-white/20 backdrop-blur-md transition-all duration-300",
-                        input: "text-white placeholder:text-white/50 text-center"
-                    }}
-                />
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            whileHover={{ scale: 1.01 }}
+            style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+        >
+            <Card sx={{
+                minWidth: 300,
+                maxWidth: 600,
+                width: '100%',
+                // Restoration of the 'glow' (shadow) and subtle border, but keeping background opaque/dark
+                boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                    borderColor: 'primary.main', // Hints at interaction
+                    boxShadow: '0 12px 48px 0 rgba(31, 38, 135, 0.5)' // Intensify glow
+                }
+            }}>
+                <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 3, p: 4 }}>
+                    <Box sx={{ textAlign: 'center' }}>
+                        <Typography variant="h5" component="h2" sx={{ fontWeight: 'bold', color: 'white', mb: 0.5 }}>
+                            Image Search
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: 'primary.main', opacity: 0.8 }}>
+                            Search for images on JW.org
+                        </Typography>
+                    </Box>
 
-                <Button
-                    size="lg"
-                    radius="full"
-                    onPress={handleSearch}
-                    className="font-bold mt-2 px-8 py-3 text-lg bg-gradient-to-r from-primary-500 to-primary-700 hover:from-primary-400 hover:to-primary-600 text-black shadow-lg shadow-primary-500/30 transition-[transform,shadow] active:scale-95 self-center"
-                    variant="shadow"
-                >
-                    Search Images
-                </Button>
-            </CardBody>
-        </Card>
+                    <TextField
+                        fullWidth
+                        placeholder="Enter search keyword..."
+                        variant="outlined"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                        sx={{
+                            input: {
+                                color: 'white',
+                                textAlign: 'center'
+                            }
+                        }}
+                    />
+
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        size="large"
+                        onClick={handleSearch}
+                        sx={{
+                            px: 4,
+                            py: 1.5,
+                            alignSelf: 'center',
+                            width: { xs: '100%', sm: 'auto' },
+                            borderRadius: 99,
+                            fontWeight: 'bold',
+                            fontSize: '1.1rem',
+                            textTransform: 'none',
+                            boxShadow: '0 4px 14px 0 rgba(55, 124, 251, 0.39)'
+                        }}
+                    >
+                        Search Images
+                    </Button>
+                </CardContent>
+            </Card>
+        </motion.div>
     );
 }

@@ -1,25 +1,43 @@
-import { NavLink } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function Navigation() {
-    const linkClasses = ({ isActive }) =>
-        `px-4 py-2 rounded-full transition-all duration-300 font-medium ${isActive
-            ? 'bg-white/20 text-white shadow-lg'
-            : 'text-primary-200/70 hover:text-white hover:bg-white/10'
-        }`;
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    // Determine if we are on the Crossword page
+    // Default to 'option1' (Search Tools) if not on crossword
+    const isCrossword = location.pathname.includes('crossword');
 
     return (
-        <motion.nav
+        <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex gap-2 mb-8 p-1 bg-white/5 backdrop-blur-md rounded-full border border-white/10"
+            className="filter-switch"
         >
-            <NavLink to="/" className={linkClasses}>
-                Scripture Search
-            </NavLink>
-            <NavLink to="/crossword" className={linkClasses}>
+            <input
+                checked={!isCrossword}
+                onChange={() => navigate('/')}
+                id="option1"
+                name="options"
+                type="radio"
+            />
+            <label htmlFor="option1" className="option">
+                Search Tools
+            </label>
+
+            <input
+                checked={isCrossword}
+                onChange={() => navigate('/crossword')}
+                id="option2"
+                name="options"
+                type="radio"
+            />
+            <label htmlFor="option2" className="option">
                 Crossword Puzzles
-            </NavLink>
-        </motion.nav>
+            </label>
+
+            <span className="background"></span>
+        </motion.div>
     );
 }
